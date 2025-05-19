@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to Online Bookstore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .left-section {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* spacing between images */
+            flex-wrap: wrap; /* wrap if screen too small */
+        }
+
+        @keyframes moveSideways {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(40px); }
+            100% { transform: translateX(0); }
+        }
+
+        .left-section img {
+            width: 100%;
+            max-width: 120px; /* smaller so 6 fit well */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: moveSideways 5s ease-in-out infinite;
+        }
+
+        .right-section {
+            max-width: 400px;
+            flex: 1;
+        }
+
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 1.1em;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .nav-buttons {
+            margin-top: 15px;
+        }
+
+        .nav-buttons input {
+            width: auto;
+            margin-right: 10px;
+            padding: 10px 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1f2937;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Online Bookstore!</h1>
+        <p>We're glad you're here. Enter your name to receive a warm greeting.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Left Section: Six Images -->
+        <div class="left-section">
+            <img src="bookstore1.jpg" alt="Bookstore Image 1" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 2" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 3" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 4" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 5" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 6" />
+        </div>
+          <div class="left-section">
+            <img src="bookstore1.jpg" alt="Bookstore Image 1" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 2" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 3" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 4" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 5" />
+            <img src="bookstore1.jpg" alt="Bookstore Image 6" />
+        </div>
+
+
+
+        <!-- Right Section: Form -->
+        <div class="right-section">
+            <h2>Please Enter Your Name:</h2>
+            <input type="text" id="userName" placeholder="Your Name" />
+            <button onclick="showWelcomeMessage()">Submit</button>
+
+            <div class="nav-buttons">
+                <a href="homebook.php">
+                    <input type="button" value="Welcome" />
+                </a>
+                <a href="bookreturn.php">
+                    <input type="button" value="Return Book" />
+                </a>
+            </div>
+
+            <!-- Welcome Message -->
+            <div id="welcomeMessage" style="margin-top: 20px;"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bookstore. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function showWelcomeMessage() {
+            var name = document.getElementById("userName").value;
+            var welcomeMessage = document.getElementById("welcomeMessage");
+
+            if (name) {
+                welcomeMessage.innerHTML = "Welcome, " + name + "! We're happy to have you at the online Bookstore. If you want to continue, press the Welcome button.";
+            } else {
+                welcomeMessage.innerHTML = "Please enter your name to receive a welcome message.";
+            }
+        }
+    </script>
+</body>
+</html>
